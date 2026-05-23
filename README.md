@@ -20,12 +20,6 @@ One of the main highlights of the website is the project showcase section, where
 - CSS
 - JavaScript
 
-## Skills Highlighted
-- Frontend Development
-- Python
-- C++
-- SQL
-- Data Structures & Algorithms
 
 ## Purpose of This Project
 The goal of building this portfolio was to:
