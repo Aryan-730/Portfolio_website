@@ -18,8 +18,6 @@ One of the main highlights of the website is the project showcase section, where
 ## Technologies Used
 - HTML
 - CSS
-- JavaScript
-
 
 ## Purpose of This Project
 The goal of building this portfolio was to:
@@ -37,7 +35,7 @@ I plan to continuously improve this portfolio by:
 - Optimizing performance and responsiveness further
 
 ## Live Website
-aryankedar.niat.tech
+https://aryankedar.niat.tech
 
 ## Author
 Aryan Kedar
