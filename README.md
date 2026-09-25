@@ -37,7 +37,7 @@ I plan to continuously improve this portfolio by:
 - Optimizing performance and responsiveness further
 
 ## Live Website
-aryankedar.niat.tech
+
 
 ## Author
 Aryan Kedar
