@@ -54,7 +54,8 @@ body {
 
 .skill-badge {
     font-size: 0.9rem;
-    margin: 5px;
+    margin: 0.5rem;
+    padding : 0.5rem;
 }
 
 .card {
