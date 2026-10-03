@@ -18,6 +18,17 @@ body {
     padding: 80px 0;
 }
 
+.btn span,
+button span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover span,
+button:hover span {
+    transform: scale(1.2);
+}
+
 .social-link {
     color: white;
     font-size: 1.5rem;
