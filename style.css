@@ -255,7 +255,7 @@ h1, h2, h3 {
   justify-content: center;
   background:
     linear-gradient(to right, var(--hero-tint) 15%, transparent),
-    url("/images/code.jpg") center / cover;
+    url("/images/code-img.jpg") center / cover;
 }
 
 .hero-content {
