@@ -9,12 +9,12 @@
   <script>
     (function () {
       var t = null;
-      try { t = localStorage.getItem("theme"); } catch (e) {}
+      try { t = localStorage.getItem("theme"); } catch (e) { }
       if (t !== "dark" && t !== "light") {
         t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       }
       document.documentElement.setAttribute("data-theme", t);
-      document.documentElement.classList.add("js");   
+      document.documentElement.classList.add("js");
     })();
   </script>
 
@@ -43,8 +43,7 @@
       <div class="nav-actions d-flex align-items-center">
         <a href="#contact" class="btn-site nav-cta">Work with me</a>
 
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode"
-          aria-pressed="false">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
           <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
           <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
         </button>
@@ -73,7 +72,8 @@
       <div class="hero-content">
         <h1>Hi, I'm Aryan. I build things for the web.</h1>
         <p>Second-year CS student learning full-stack development, one project at a time.</p>
-        <p class="typed-line">Currently into <span id="typed">React</span><span class="cursor" aria-hidden="true"></span></p>
+        <p class="typed-line">Currently into <span id="typed">React</span><span class="cursor"
+            aria-hidden="true"></span></p>
         <div class="buttons d-flex justify-content-center flex-wrap">
           <a href="#projects" class="btn-site btn-site-lg">View projects</a>
           <a href="#contact" class="btn-site btn-site-lg">Contact me</a>
@@ -100,7 +100,8 @@
       <div class="wrap">
         <h2 class="section-title">Education <span aria-hidden="true">🧑‍🎓</span></h2>
         <div class="panel">
-          <h3 class="edu-degree"><span aria-hidden="true">🎓</span> B.Tech in Computer Science Engineering In Data Science</h3>
+          <h3 class="edu-degree"><span aria-hidden="true">🎓</span> B.Tech in Computer Science Engineering In Data
+            Science</h3>
           <p class="edu-school fw-semibold">NxtWave Innovation of Advanced Technology, Pune</p>
           <p class="edu-campus">Ajeenkya DY Patil University Campus</p>
           <p class="edu-meta">Expected Graduation : 2029</p>
@@ -175,67 +176,80 @@
           <article class="panel project">
             <h3>To-Do Application</h3>
             <p class="project-sub">Task management web app</p>
-            <p>Developed a responsive To-Do application using React.js. Features include adding, editing, and deleting tasks with a clean and intuitive user interface. A modern design and smart application with a user-friendly experience.</p>
+            <p>Developed a responsive To-Do application using React.js. Features include adding, editing, and deleting
+              tasks with a clean and intuitive user interface. A modern design and smart application with a
+              user-friendly experience.</p>
             <ul>
               <li>Modern design</li>
               <li>Interactive and user-friendly</li>
             </ul>
-            <a href="https://a-todo-application-tau.vercel.app/" class="project-btn" target="_blank" rel="noopener">Visit Project</a>
+            <a href="https://a-todo-application-tau.vercel.app/" class="project-btn" target="_blank"
+              rel="noopener">Visit Project</a>
           </article>
 
           <article class="panel project">
             <h3>Expense Tracker</h3>
             <p class="project-sub">A multi-user expense tracker CLI built in Python</p>
-            <p>Built a multi-user Expense Tracker CLI in Python with session-based authentication, persistent JSON storage, and a modular architecture separating user credentials from financial data.</p>
+            <p>Built a multi-user Expense Tracker CLI in Python with session-based authentication, persistent JSON
+              storage, and a modular architecture separating user credentials from financial data.</p>
             <ul>
               <li>json.JSONDecodeError handled alongside.</li>
               <li>Passwords validated before any account object.</li>
             </ul>
-            <a href="https://github.com/Aryan-730/Expense-Tracker" class="project-btn" target="_blank" rel="noopener">Github Link</a>
+            <a href="https://github.com/Aryan-730/Expense-Tracker" class="project-btn" target="_blank"
+              rel="noopener">Github Link</a>
           </article>
 
           <article class="panel project">
             <h3>Currency Convertor</h3>
             <p class="project-sub">A real-time currency exchange tool</p>
-            <p>A web app that converts amounts between currencies using live exchange rates, built with HTML, CSS, and JavaScript. Features country flags for currency selection and a quick swap option.</p>
+            <p>A web app that converts amounts between currencies using live exchange rates, built with HTML, CSS, and
+              JavaScript. Features country flags for currency selection and a quick swap option.</p>
             <ul>
               <li>Quick currency exchange</li>
               <li>All country currency exchange</li>
             </ul>
-            <a href="https://exchangebyaryan.niat.tech/" class="project-btn" target="_blank" rel="noopener">Visit Project</a>
+            <a href="https://exchangebyaryan.niat.tech/" class="project-btn" target="_blank" rel="noopener">Visit
+              Project</a>
           </article>
 
           <article class="panel project">
             <h3>Tic Tac Toe</h3>
             <p class="project-sub">A simple Tic Tac Toe Game</p>
-            <p>A classic two-player Tic Tac Toe game built with HTML, CSS, and JavaScript. Features an interactive game board, win detection, and a clean responsive UI.</p>
+            <p>A classic two-player Tic Tac Toe game built with HTML, CSS, and JavaScript. Features an interactive game
+              board, win detection, and a clean responsive UI.</p>
             <ul>
               <li>Two-player gameplay</li>
               <li>Win &amp; draw detection</li>
             </ul>
-            <a href="https://tictactoearyan.niat.tech/" class="project-btn" target="_blank" rel="noopener">Visit Project</a>
+            <a href="https://tictactoearyan.niat.tech/" class="project-btn" target="_blank" rel="noopener">Visit
+              Project</a>
           </article>
 
           <article class="panel project">
             <h3>FoodExpress</h3>
             <p class="project-sub">Food delivery application</p>
-            <p>FoodExpress is a food delivery application that delivers delicious food from restaurants near you at affordable prices.</p>
+            <p>FoodExpress is a food delivery application that delivers delicious food from restaurants near you at
+              affordable prices.</p>
             <ul>
               <li>Affordable and flexible</li>
               <li>Quick delivery</li>
             </ul>
-            <a href="https://foodexpress73.lovable.app/" class="project-btn" target="_blank" rel="noopener">Visit Project</a>
+            <a href="https://foodexpress73.lovable.app/" class="project-btn" target="_blank" rel="noopener">Visit
+              Project</a>
           </article>
 
           <article class="panel project">
             <h3>Portfolio Website</h3>
             <p class="project-sub">Personal portfolio website</p>
-            <p>Built a personal portfolio from scratch using HTML, CSS and JavaScript. Deployed on NIAT subdomain with smooth scroll navigation and mobile-responsive layout.</p>
+            <p>Built a personal portfolio from scratch using HTML, CSS and JavaScript. Deployed on NIAT subdomain with
+              smooth scroll navigation and mobile-responsive layout.</p>
             <ul>
               <li>Responsive design</li>
               <li>Easy to navigate</li>
             </ul>
-            <a href="https://github.com/Aryan-730/Portfolio_website" class="project-btn" target="_blank" rel="noopener">Github Link</a>
+            <a href="https://github.com/Aryan-730/Portfolio_website" class="project-btn" target="_blank"
+              rel="noopener">Github Link</a>
           </article>
         </div>
       </div>
@@ -246,12 +260,18 @@
         <h2 class="section-title">Connect with Me <span aria-hidden="true">🔗</span></h2>
 
         <ul class="panel contact-links list-unstyled d-flex flex-wrap justify-content-around">
-          <li><a href="/assets/Aryan_Kedar_Resume.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i> Resume</a></li>
-          <li><a href="https://www.linkedin.com/in/aryan-kedar-9a88b4377/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
-          <li><a href="https://github.com/Aryan-730" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></li>
-          <li><a href="https://leetcode.com/u/adXIPEYsg7/" target="_blank" rel="noopener"><i class="fa-solid fa-code" aria-hidden="true"></i> LeetCode</a></li>
-          <li><a href="mailto:kedaaryan77@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Email</a></li>
-          <li><a href="https://x.com/Aryan_kedar07" target="_blank" rel="noopener"><i class="fa-brands fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+          <li><a href="/assets/Aryan_Kedar_Resume.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf"
+                aria-hidden="true"></i> Resume</a></li>
+          <li><a href="https://www.linkedin.com/in/aryan-kedar-9a88b4377/" target="_blank" rel="noopener"><i
+                class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/Aryan-730" target="_blank" rel="noopener"><i class="fa-brands fa-github"
+                aria-hidden="true"></i> GitHub</a></li>
+          <li><a href="https://leetcode.com/u/adXIPEYsg7/" target="_blank" rel="noopener"><i class="fa-solid fa-code"
+                aria-hidden="true"></i> LeetCode</a></li>
+          <li><a href="mailto:kedaaryan77@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Email</a>
+          </li>
+          <li><a href="https://x.com/Aryan_kedar07" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"
+                aria-hidden="true"></i> Twitter</a></li>
         </ul>
       </div>
     </section>
@@ -279,7 +299,8 @@
         <h3 class="fw-semibold">Elsewhere</h3>
         <ul class="list-unstyled">
           <li><a href="https://github.com/Aryan-730" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/aryan-kedar-9a88b4377/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/aryan-kedar-9a88b4377/" target="_blank" rel="noopener">LinkedIn</a>
+          </li>
           <li><a href="https://leetcode.com/u/adXIPEYsg7/" target="_blank" rel="noopener">LeetCode</a></li>
         </ul>
       </nav>
@@ -288,7 +309,7 @@
         <h3 class="fw-semibold">Get in touch</h3>
         <p>Open to internships and collaboration.</p>
         <p>Open Freelancing.</p>
-        <a class="contact-link" href="mailto:kedaaryan77@gmail.com">kedararyan77@gmail.com</a>
+        <a class="contact-link" href="mailto:kedararyan77@gmail.com">kedararyan77@gmail.com</a>
       </div>
 
     </div>
