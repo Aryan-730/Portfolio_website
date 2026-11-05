@@ -2,332 +2,308 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aryan Kedar | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
 
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "dark" && t !== "light") {
+        t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.classList.add("js");   
+    })();
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
-
 <body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Aryan Kedar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#connect">Connect with Me</a></li>
-                </ul>
-            </div>
-        </div>
+  <header class="header">
+    <nav class="nav d-flex align-items-center justify-content-between" aria-label="Main">
+      <a href="#" class="logo">Aryan Kedar</a>
+
+      <ul class="nav-links list-unstyled align-items-center fw-semibold">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Connect with me</a></li>
+      </ul>
+
+      <div class="nav-actions d-flex align-items-center">
+        <a href="#contact" class="btn-site nav-cta">Work with me</a>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode"
+          aria-pressed="false">
+          <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"
+          aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
 
-    <header class="hero-section text-center" id="top">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Aryan Kedar</h1>
-            <h3 class="mb-3 mt-3">Second year CS student | React Developer & DSA Problem Solver</h3>
-            <p class="lead mb-2">Learning backend with Node, Express & MongoDB and Solving DSA problems daily</p>
-            <div class="mt-4">
-                <a href="#connect" class="btn btn-light fw-bold px-4 py-2 mx-3 mt-3 "><span class="btn-text">Connect with me</span></a>
-                <a href="#projects" class="btn btn-outline-light fw-bold px-4 py-2 mx-3 mt-3"><span class="btn-text">Visit Projects</span></a>
-            </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="list-unstyled">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Connect with me</a></li>
+      </ul>
+      <a href="#contact" class="btn-site">Work with me</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero d-flex align-items-center text-center" id="home">
+      <div class="hero-content">
+        <h1>Hi, I'm Aryan. I build things for the web.</h1>
+        <p>Second-year CS student learning full-stack development, one project at a time.</p>
+        <p class="typed-line">Currently into <span id="typed">React</span><span class="cursor" aria-hidden="true"></span></p>
+        <div class="buttons d-flex justify-content-center flex-wrap">
+          <a href="#projects" class="btn-site btn-site-lg">View projects</a>
+          <a href="#contact" class="btn-site btn-site-lg">Contact me</a>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <div class="container py-5">
+    <section class="section" id="about">
+      <div class="wrap">
+        <h2 class="section-title">About Me <span aria-hidden="true">👋</span></h2>
+        <div class="panel panel-lg">
+          <p class="about-text">
+            I'm a second-year Computer Science student at NIAT Pune with a focus on full-stack web development.
+            I've built the frontend of the MERN stack using React and am now working on the backend with Node.js,
+            Express and MongoDB, so I can ship complete applications end to end. I'm also building my data
+            structures and algorithms foundation on LeetCode, working through problems topic by topic. I enjoy
+            turning ideas into working products. Ready for new challenges and new problems.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <section id="about" class="mb-5">
-            <h2 class="section-title">About Me 👋🏼</h2>
-            <div class="card p-4">
-                <p class="lead">
-                    I'm a second-year Computer Science student at NIAT Pune with a focus on full-stack web development.
-                    I've built the frontend of the MERN stack using React and am now working on the backend with
-                    Node.js, Express and MongoDB, so I can ship complete applications end to end. I'm also building my
-                    data structures and algorithms foundation on LeetCode, working through problems topic by topic. I
-                    enjoy turning ideas into working products.
-                    Ready for new challenges and new problems .
-                </p>
-            </div>
-        </section>
+    <section class="section" id="education">
+      <div class="wrap">
+        <h2 class="section-title">Education <span aria-hidden="true">🧑‍🎓</span></h2>
+        <div class="panel">
+          <h3 class="edu-degree"><span aria-hidden="true">🎓</span> B.Tech in Computer Science Engineering In Data Science</h3>
+          <p class="edu-school fw-semibold">NxtWave Innovation of Advanced Technology, Pune</p>
+          <p class="edu-campus">Ajeenkya DY Patil University Campus</p>
+          <p class="edu-meta">Expected Graduation : 2029</p>
+        </div>
+      </div>
+    </section>
 
-        <section id="education" class="mb-5">
-            <h2 class="section-title">Education 👨🏻‍🎓</h2>
-            <div class="card p-4">
-                <h4 class="fw-bold">🎓 B.Tech in Computer Science Engineering In Data Science</h4>
-                <h6 class="mb-1">NxtWave Innovation of Advanced Technology, Pune </h6>
-                <p class="mb-1">Ajeenkya DY Patil University Campus</p>
-                <p class="text-muted">Expected Graduation : 2029</p>
-            </div>
-        </section>
+    <section class="section" id="skills">
+      <div class="wrap">
+        <h2 class="section-title">Skills I Have <span aria-hidden="true">🧑‍💻</span></h2>
 
-        <section id="skills" class="mb-5">
-            <h2 class="section-title">Skills I Have 👨🏻‍💻</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card p-4">
-                        <h5>Languages 💻</h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="badge bg-primary skill-badge">HTML</span>
-                            <span class="badge bg-primary skill-badge">CSS</span>
-                            <span class="badge bg-primary skill-badge">JavaScript</span>
-                            <span class="badge bg-primary skill-badge">Python</span>
-                            <span class="badge bg-primary skill-badge">C++</span>
-                            <span class="badge bg-primary skill-badge"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-4">
-                        <h5> Framework and Library 🧩</h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="badge bg-success skill-badge">Tailwind CSS</span>
-                            <span class="badge bg-success skill-badge">Bootstrap</span>
-                            <span class="badge bg-success skill-badge">REACT.Js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-4">
-                        <h5> Tools 🛠️</h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="badge bg-dark skill-badge">Git/Github</span>
-                            <span class="badge bg-dark skill-badge">VS Code</span>
-                            <span class="badge bg-dark skill-badge">Claude</span>
-                            <span class="badge bg-dark skill-badge">Chatgpt</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-4">
-                        <h5>Concepts 📚</h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="badge bg-info skill-badge">OOP</span>
-                            <span class="badge bg-info skill-badge">Rest API</span>
-                            <span class="badge bg-info skill-badge">Responsive Web Design</span>
-                            <span class="badge bg-info skill-badge">File Handling</span>
-                            <span class="badge bg-info skill-badge">DOM Manipulation</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="card p-4">
-                        <h5>Currently Learning 📈 </h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="badge bg-light text-dark border skill-badge">Data Structures and
-                                Algorithms</span>
-                            <span class="badge bg-light text-dark border skill-badge">Node.js</span>
-                            <span class="badge bg-light text-dark border skill-badge">Express.js</span>
-                            <span class="badge bg-light text-dark border skill-badge">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="skills-grid">
+          <div class="panel">
+            <h3 class="skill-title">Languages <span aria-hidden="true">💻</span></h3>
+            <ul class="chips list-unstyled d-flex flex-wrap">
+              <li class="chip chip-blue">HTML</li>
+              <li class="chip chip-blue">CSS</li>
+              <li class="chip chip-blue">JavaScript</li>
+              <li class="chip chip-blue">Python</li>
+              <li class="chip chip-blue">C++</li>
+            </ul>
+          </div>
 
-        <section id="projects" class="mb-5">
-            <h2 class="section-title">My Projects 🌐</h2>
-            <div class="row g-4">
+          <div class="panel">
+            <h3 class="skill-title">Framework and Library <span aria-hidden="true">🧩</span></h3>
+            <ul class="chips list-unstyled d-flex flex-wrap">
+              <li class="chip chip-green">Tailwind CSS</li>
+              <li class="chip chip-green">Bootstrap</li>
+              <li class="chip chip-green">React.js</li>
+            </ul>
+          </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold">To-Do Application</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Task management web app</h6>
-                            <p class="card-text small">
-                                Developed a responsive To-Do application using React Js. Features include adding,
-                                editing,
-                                and deleting tasks with a clean and intuitive user interface. Having a Mordern design
-                                and
-                                smart application with a user-friendly experience.
-                            </p>
-                            <ul class="small text-muted mb-3">
-                                <li>Mordern Design</li>
-                                <li>Interactive and User-Friendly</li>
-                            </ul>
-                            <div class="mt-auto">
-                                <a href="https://a-todo-application-tau.vercel.app/"
-                                    class="btn btn-outline-primary btn-sm w-100" target="_blank"><span class="btn-text">Visit Project</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="panel">
+            <h3 class="skill-title">Tools <span aria-hidden="true">🛠️</span></h3>
+            <ul class="chips list-unstyled d-flex flex-wrap">
+              <li class="chip chip-dark">Git/GitHub</li>
+              <li class="chip chip-dark">VS Code</li>
+              <li class="chip chip-dark">Claude</li>
+              <li class="chip chip-dark">ChatGPT</li>
+            </ul>
+          </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold">Expense Tracker</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">A multi-user expense tracker CLI built in Python
-                            </h6>
-                            <p class="card-text small">
-                                Built a multi-user Expense Tracker CLI in Python with session-based authentication,
-                                persistent JSON storage, and a modular architecture separating user credentials from
-                                financial data.
-                            </p>
-                            <ul class="small text-muted mb-3">
-                                <li>json.JSONDecodeError handled alongside.</li>
-                                <li>Passwords validated before any account object.</li>
-                            </ul>
-                            <div class="mt-auto">
-                                <a href="https://github.com/Aryan-730/Expense-Tracker"
-                                    class="btn btn-outline-primary btn-sm w-100" target="_blank"><span class="btn-text">Github Link</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="panel">
+            <h3 class="skill-title">Concepts <span aria-hidden="true">📚</span></h3>
+            <ul class="chips list-unstyled d-flex flex-wrap">
+              <li class="chip chip-cyan">OOP</li>
+              <li class="chip chip-cyan">REST API</li>
+              <li class="chip chip-cyan">Responsive Web Design</li>
+              <li class="chip chip-cyan">File Handling</li>
+              <li class="chip chip-cyan">DOM Manipulation</li>
+            </ul>
+          </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold">Currency Convertor</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">A real-time currency exchange tool</h6>
-                            <p class="card-text small">
-                                A web app that converts amounts between currencies using live exchange rates, built with
-                                HTML, CSS, and JavaScript. Features country flags for currency selection and a quick
-                                swap option.
-                            </p>
-                            <ul class="small text-muted mb-3">
-                                <li>Quick currency exchange</li>
-                                <li>All country currency exchange</li>
-                            </ul>
-                            <div class="mt-auto">
-                                <a href="https://exchangebyaryan.niat.tech/"
-                                    class="btn btn-outline-primary btn-sm w-100" target="_blank"><span class="btn-text">Visit Project</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="panel skills-wide">
+            <h3 class="skill-title">Currently Learning <span aria-hidden="true">📈</span></h3>
+            <ul class="chips list-unstyled d-flex flex-wrap">
+              <li class="chip chip-light">Data Structures and Algorithms</li>
+              <li class="chip chip-light">Node.js</li>
+              <li class="chip chip-light">Express.js</li>
+              <li class="chip chip-light">MongoDB</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold">Tic Tac Toe</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">A simple Tic Tac Toe Game</h6>
-                            <p class="card-text small">
-                                A classic two-player Tic Tac Toe game built with HTML, CSS, and JavaScript. Features an
-                                interactive game board, win detection, and a clean responsive UI .
-                            </p>
-                            <ul class="small text-muted mb-3">
-                                <li>Two-player gameplay</li>
-                                <li>Win & draw detection</li>
-                            </ul>
-                            <div class="mt-auto">
-                                <a href="https://tictactoearyan.niat.tech/" class="btn btn-outline-primary btn-sm w-100"
-                                    target="_blank"><span class="btn-text">Visit Project</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section class="section" id="projects">
+      <div class="wrap">
+        <h2 class="section-title">My Projects <span aria-hidden="true">🌐</span></h2>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold">FoodExpress</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Food delivery application</h6>
-                            <p class="card-text small">
-                                FoodExpress is a food delivery application that delivery delicious food with the help of
-                                restaurants near by you with affordable price
-                            </p>
-                            <ul class="small text-muted mb-3">
-                                <li>Affordable and Flexible</li>
-                                <li>Quick delivery</li>
-                            </ul>
-                            <div class="mt-auto">
-                                <a href="https://foodexpress73.lovable.app/"
-                                    class="btn btn-outline-primary btn-sm w-100" target="_blank"><span class="btn-text">Visit Project</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="projects-grid">
+          <article class="panel project">
+            <h3>To-Do Application</h3>
+            <p class="project-sub">Task management web app</p>
+            <p>Developed a responsive To-Do application using React.js. Features include adding, editing, and deleting tasks with a clean and intuitive user interface. A modern design and smart application with a user-friendly experience.</p>
+            <ul>
+              <li>Modern design</li>
+              <li>Interactive and user-friendly</li>
+            </ul>
+            <a href="https://a-todo-application-tau.vercel.app/" class="project-btn" target="_blank" rel="noopener">Visit Project</a>
+          </article>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold">Portfolio Website</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Personal portfolio website</h6>
-                            <p class="card-text small">
-                                Built a personal portfolio from scratch using HTML, CSS
-                                and JavaScript. Deployed on NIAT subdomain with smooth
-                                scroll navigation and mobile-responsive layout.
-                            </p>
-                            <ul class="small text-muted mb-3">
-                                <li>Responsive design</li>
-                                <li>Easy to navigate</li>
-                            </ul>
-                            <div class="mt-auto">
-                                <a href="https://github.com/Aryan-730/Portfolio_website"
-                                    class="btn btn-outline-primary btn-sm w-100" target="_blank"><span class="btn-text">Github Link</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <article class="panel project">
+            <h3>Expense Tracker</h3>
+            <p class="project-sub">A multi-user expense tracker CLI built in Python</p>
+            <p>Built a multi-user Expense Tracker CLI in Python with session-based authentication, persistent JSON storage, and a modular architecture separating user credentials from financial data.</p>
+            <ul>
+              <li>json.JSONDecodeError handled alongside.</li>
+              <li>Passwords validated before any account object.</li>
+            </ul>
+            <a href="https://github.com/Aryan-730/Expense-Tracker" class="project-btn" target="_blank" rel="noopener">Github Link</a>
+          </article>
 
+          <article class="panel project">
+            <h3>Currency Convertor</h3>
+            <p class="project-sub">A real-time currency exchange tool</p>
+            <p>A web app that converts amounts between currencies using live exchange rates, built with HTML, CSS, and JavaScript. Features country flags for currency selection and a quick swap option.</p>
+            <ul>
+              <li>Quick currency exchange</li>
+              <li>All country currency exchange</li>
+            </ul>
+            <a href="https://exchangebyaryan.niat.tech/" class="project-btn" target="_blank" rel="noopener">Visit Project</a>
+          </article>
 
-            </div>
-        </section>
+          <article class="panel project">
+            <h3>Tic Tac Toe</h3>
+            <p class="project-sub">A simple Tic Tac Toe Game</p>
+            <p>A classic two-player Tic Tac Toe game built with HTML, CSS, and JavaScript. Features an interactive game board, win detection, and a clean responsive UI.</p>
+            <ul>
+              <li>Two-player gameplay</li>
+              <li>Win &amp; draw detection</li>
+            </ul>
+            <a href="https://tictactoearyan.niat.tech/" class="project-btn" target="_blank" rel="noopener">Visit Project</a>
+          </article>
 
-        <section id="connect" class="mb-5">
-            <h2 class="section-title">Connect with Me 🔗</h2>
-            <div class="card p-4">
-                <div class="d-flex flex-wrap justify-content-evenly gap-5 m-2">
-                    <div class="mt-auto " id="resume">
-                        <a href="assets/Aryan_Kedar_Resume.pdf" class="text-decoration-none text-dark w-100"
-                            target="_blank">
-                            <h6 class="text-muted"><i class="fa-regular fa-file-pdf"></i> Resume</h6>
-                        </a>
-                    </div>
-                    <div class="mt-auto " id="linkedIn">
-                        <a href="https://www.linkedin.com/in/aryan-kedar-9a88b4377/"
-                            class="text-decoration-none text-dark w-100" target="_blank">
-                            <h6 class="text-muted"><i class="fa-brands fa-linkedin"></i> LinkedIn </h6>
-                        </a>
-                    </div>
-                    <div class="mt-auto " id="github">
-                        <a href="https://github.com/Aryan-730" class="text-decoration-none text-dark w-100"
-                            target="_blank">
-                            <h6 class="text-muted"><i class="fa-brands fa-github "></i> GitHub </h6>
-                        </a>
-                    </div>
-                    <div class="mt-auto " id="leetcode">
-                        <a href="https://leetcode.com/u/adXIPEYsg7/" class="text-decoration-none text-dark w-100"
-                            target="_blank">
-                            <h6 class="text-muted"><i class="fa-solid fa-code"></i> LeetCode </h6>
-                        </a>
-                    </div>
-                    <div class="mt-auto " id="mail">
-                        <a href="mailto:kedararyan77@gmail.com" class="text-decoration-none text-dark w-100"
-                            target="_blank">
-                            <h6 class="text-muted"><i class="fa-regular fa-envelope"></i> Email </h6>
-                        </a>
-                    </div>
-                    <div class="mt-auto " id="twitter">
-                        <a href="https://x.com/Aryan_kedar07" class="text-decoration-none text-dark w-100"
-                            target="_blank">
-                            <h6 class="text-muted"><i class="fa-brands fa-twitter"></i> Twitter </h6>
-                        </a>
-                    </div>
+          <article class="panel project">
+            <h3>FoodExpress</h3>
+            <p class="project-sub">Food delivery application</p>
+            <p>FoodExpress is a food delivery application that delivers delicious food from restaurants near you at affordable prices.</p>
+            <ul>
+              <li>Affordable and flexible</li>
+              <li>Quick delivery</li>
+            </ul>
+            <a href="https://foodexpress73.lovable.app/" class="project-btn" target="_blank" rel="noopener">Visit Project</a>
+          </article>
 
-                </div>
-            </div>
-        </section>
+          <article class="panel project">
+            <h3>Portfolio Website</h3>
+            <p class="project-sub">Personal portfolio website</p>
+            <p>Built a personal portfolio from scratch using HTML, CSS and JavaScript. Deployed on NIAT subdomain with smooth scroll navigation and mobile-responsive layout.</p>
+            <ul>
+              <li>Responsive design</li>
+              <li>Easy to navigate</li>
+            </ul>
+            <a href="https://github.com/Aryan-730/Portfolio_website" class="project-btn" target="_blank" rel="noopener">Github Link</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-last" id="contact">
+      <div class="wrap">
+        <h2 class="section-title">Connect with Me <span aria-hidden="true">🔗</span></h2>
+
+        <ul class="panel contact-links list-unstyled d-flex flex-wrap justify-content-around">
+          <li><a href="/assets/Aryan_Kedar_Resume.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i> Resume</a></li>
+          <li><a href="https://www.linkedin.com/in/aryan-kedar-9a88b4377/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/Aryan-730" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></li>
+          <li><a href="https://leetcode.com/u/adXIPEYsg7/" target="_blank" rel="noopener"><i class="fa-solid fa-code" aria-hidden="true"></i> LeetCode</a></li>
+          <li><a href="mailto:kedaaryan77@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Email</a></li>
+          <li><a href="https://x.com/Aryan_kedar07" target="_blank" rel="noopener"><i class="fa-brands fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="brand">
+        <a href="#" class="logo">Aryan Kedar</a>
+        <p>Second-year CS student building full-stack web apps and practicing DSA, one project at a time.</p>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <h3 class="fw-semibold">Explore</h3>
+        <ul class="list-unstyled">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Social links">
+        <h3 class="fw-semibold">Elsewhere</h3>
+        <ul class="list-unstyled">
+          <li><a href="https://github.com/Aryan-730" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/aryan-kedar-9a88b4377/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://leetcode.com/u/adXIPEYsg7/" target="_blank" rel="noopener">LeetCode</a></li>
+        </ul>
+      </nav>
+
+      <div class="contact">
+        <h3 class="fw-semibold">Get in touch</h3>
+        <p>Open to internships and collaboration.</p>
+        <p>Open Freelancing.</p>
+        <a class="contact-link" href="mailto:your.email@example.com">kedararyan77@gmail.com@example.com</a>
+      </div>
 
     </div>
 
-    <footer id="" class="bg-dark text-white py-4 text-center">
-        <div class="container">
-            <p class="small mb-0">&copy; 2026 Aryan Kedar. All rights reserved.</p>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner d-flex flex-wrap justify-content-between align-items-center">
+        <span>&copy; <span id="year"></span> Aryan Kedar. All rights reserved.</span>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
 
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
 </body>
 
 </html>
